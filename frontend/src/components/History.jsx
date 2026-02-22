@@ -6,9 +6,9 @@ function History() {
     const [history, setHistory] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    const fetchHistory = async () => {
+    const fetchHistory = () => {
         try {
-            const data = await getHistory();
+            const data = getHistory();
             setHistory(data);
         } catch (err) {
             console.error('Failed to load history:', err);
@@ -21,22 +21,14 @@ function History() {
         fetchHistory();
     }, []);
 
-    const handleClear = async () => {
-        try {
-            await clearHistory();
-            setHistory([]);
-        } catch (err) {
-            console.error('Failed to clear history:', err);
-        }
+    const handleClear = () => {
+        clearHistory();
+        setHistory([]);
     };
 
-    const handleDelete = async (id) => {
-        try {
-            await deleteHistoryItem(id);
-            setHistory(history.filter(item => item.id !== id));
-        } catch (err) {
-            console.error('Failed to delete item:', err);
-        }
+    const handleDelete = (id) => {
+        deleteHistoryItem(id);
+        setHistory(history.filter(item => item.id !== id));
     };
 
     if (loading) {

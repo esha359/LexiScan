@@ -1,24 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { getTransitionTable } from '../utils/api';
 
 function TransitionTable() {
-    const [tableData, setTableData] = useState(null);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchTable = async () => {
-            try {
-                const data = await getTransitionTable();
-                setTableData(data);
-            } catch (err) {
-                console.error('Failed to load transition table:', err);
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchTable();
-    }, []);
+    const [tableData] = useState(() => getTransitionTable());
+    const loading = false;
 
     if (loading) {
         return (

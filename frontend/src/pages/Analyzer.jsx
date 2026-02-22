@@ -14,19 +14,19 @@ function Analyzer() {
     const [activeTab, setActiveTab] = useState('tokens');
     const [error, setError] = useState(null);
 
-    const handleAnalyze = async () => {
+    const handleAnalyze = () => {
         if (!code.trim()) return;
 
         setLoading(true);
         setError(null);
 
         try {
-            const data = await analyzeCode(code);
+            const data = analyzeCode(code);
             setResult(data);
             setActiveTab('tokens');
         } catch (err) {
             console.error('Analysis failed:', err);
-            setError('Failed to analyze code. Make sure the backend server is running.');
+            setError('Failed to analyze code. Please check your input.');
         } finally {
             setLoading(false);
         }
