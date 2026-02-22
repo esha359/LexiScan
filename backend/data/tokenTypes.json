@@ -1,0 +1,59 @@
+{
+    "tokenCategories": {
+        "KEYWORD": {
+            "color": "#ff6b9d",
+            "description": "Reserved words in the programming language",
+            "icon": "🔑"
+        },
+        "IDENTIFIER": {
+            "color": "#c084fc",
+            "description": "User-defined names for variables, functions, etc.",
+            "icon": "📝"
+        },
+        "INTEGER": {
+            "color": "#67e8f9",
+            "description": "Whole number literals",
+            "icon": "🔢"
+        },
+        "FLOAT": {
+            "color": "#34d399",
+            "description": "Decimal number literals",
+            "icon": "💧"
+        },
+        "OPERATOR": {
+            "color": "#fbbf24",
+            "description": "Arithmetic and logical operators",
+            "icon": "⚡"
+        },
+        "DELIMITER": {
+            "color": "#fb923c",
+            "description": "Punctuation marks and separators",
+            "icon": "📌"
+        },
+        "STRING": {
+            "color": "#a3e635",
+            "description": "String literals enclosed in quotes",
+            "icon": "💬"
+        },
+        "COMPARISON": {
+            "color": "#f472b6",
+            "description": "Comparison and assignment operators",
+            "icon": "⚖️"
+        },
+        "COMMENT": {
+            "color": "#94a3b8",
+            "description": "Code comments (ignored by compiler)",
+            "icon": "💭"
+        },
+        "WHITESPACE": {
+            "color": "#475569",
+            "description": "Spaces, tabs, and newlines",
+            "icon": "⬜"
+        },
+        "ERROR": {
+            "color": "#ef4444",
+            "description": "Unrecognized or invalid tokens",
+            "icon": "❌"
+        }
+    }
+}

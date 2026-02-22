@@ -1,0 +1,199 @@
+{
+    "states": {
+        "q0": {
+            "type": "start",
+            "label": "Start"
+        },
+        "q1": {
+            "type": "intermediate",
+            "label": "Letter"
+        },
+        "q2": {
+            "type": "intermediate",
+            "label": "Digit"
+        },
+        "q3": {
+            "type": "accepting",
+            "label": "Identifier/Keyword"
+        },
+        "q4": {
+            "type": "accepting",
+            "label": "Integer"
+        },
+        "q5": {
+            "type": "intermediate",
+            "label": "Dot after Digit"
+        },
+        "q6": {
+            "type": "accepting",
+            "label": "Float"
+        },
+        "q7": {
+            "type": "accepting",
+            "label": "Operator"
+        },
+        "q8": {
+            "type": "accepting",
+            "label": "Delimiter"
+        },
+        "q9": {
+            "type": "intermediate",
+            "label": "String Start"
+        },
+        "q10": {
+            "type": "accepting",
+            "label": "String"
+        },
+        "q11": {
+            "type": "accepting",
+            "label": "Comparison/Assignment"
+        },
+        "q12": {
+            "type": "intermediate",
+            "label": "Slash"
+        },
+        "q13": {
+            "type": "accepting",
+            "label": "Comment"
+        },
+        "q14": {
+            "type": "error",
+            "label": "Error"
+        }
+    },
+    "transitions": {
+        "q0": {
+            "letter": "q1",
+            "_": "q1",
+            "digit": "q2",
+            "+": "q7",
+            "-": "q7",
+            "*": "q7",
+            "/": "q12",
+            "%": "q7",
+            "(": "q8",
+            ")": "q8",
+            "{": "q8",
+            "}": "q8",
+            "[": "q8",
+            "]": "q8",
+            ";": "q8",
+            ",": "q8",
+            "\"": "q9",
+            "'": "q9",
+            "=": "q11",
+            "<": "q11",
+            ">": "q11",
+            "!": "q11",
+            " ": "q0",
+            "\t": "q0",
+            "\n": "q0",
+            "\r": "q0"
+        },
+        "q1": {
+            "letter": "q1",
+            "digit": "q1",
+            "_": "q1",
+            "other": "q3"
+        },
+        "q2": {
+            "digit": "q2",
+            ".": "q5",
+            "other": "q4"
+        },
+        "q5": {
+            "digit": "q5",
+            "other": "q6"
+        },
+        "q9": {
+            "\"": "q10",
+            "'": "q10",
+            "other": "q9"
+        },
+        "q11": {
+            "=": "q11",
+            "other": "q11"
+        },
+        "q12": {
+            "/": "q13",
+            "other": "q7"
+        },
+        "q13": {
+            "\n": "q13",
+            "other": "q13"
+        }
+    },
+    "keywords": [
+        "auto",
+        "break",
+        "case",
+        "char",
+        "const",
+        "continue",
+        "default",
+        "do",
+        "double",
+        "else",
+        "enum",
+        "extern",
+        "float",
+        "for",
+        "goto",
+        "if",
+        "int",
+        "long",
+        "register",
+        "return",
+        "short",
+        "signed",
+        "sizeof",
+        "static",
+        "struct",
+        "switch",
+        "typedef",
+        "union",
+        "unsigned",
+        "void",
+        "volatile",
+        "while",
+        "class",
+        "public",
+        "private",
+        "protected",
+        "virtual",
+        "template",
+        "namespace",
+        "using",
+        "try",
+        "catch",
+        "throw",
+        "new",
+        "delete",
+        "this",
+        "true",
+        "false",
+        "null",
+        "nullptr",
+        "bool",
+        "string",
+        "include",
+        "define",
+        "ifdef",
+        "ifndef",
+        "endif",
+        "pragma",
+        "var",
+        "let",
+        "function",
+        "console",
+        "log",
+        "printf",
+        "scanf",
+        "main",
+        "import",
+        "from",
+        "export",
+        "async",
+        "await"
+    ]
+}
